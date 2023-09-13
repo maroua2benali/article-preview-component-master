@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: hsl(210, 46%, 95%);
+    line-height: 1.5;
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 8px;
+    width: fit-content;
+}
+
+.image-container {
+    display: flex;
+    width: 250px;
+    /* Adjust the maximum width as needed */
+    height: 300px;
+    /* Adjust the maximum height as needed */
+    overflow: hidden;
+    /* Hide any part of the image exceeding the container */
+    border-top-left-radius: 8px;
+    /* Adjust the radius as needed */
+    border-bottom-left-radius: 8px;
+}
+
+.image-container img {
+    width: 100%;
+    /* Make sure the image takes up the entire width of its container */
+    height: 100%;
+    /* Automatically adjust the height while maintaining aspect ratio */
+    object-fit: cover;
+}
+
+.detail {
+    width: 410px;
+    /* Adjust the maximum width as needed */
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar img {
+    width: 15%;
+    border-radius: 50%;
+}
+
+h2,
+h4 {
+    color: hsl(217, 19%, 35%);
+}
+
+.detail p {
+    color: hsl(214, 17%, 51%);
+}
+
+.avatar p {
+    color: hsl(212, 23%, 69%);
+}
+
+button {
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+.share-button {
+    position: relative;
+}
+
+.popover {
+    position: absolute;
+    width: 200px;
+    align-items: center;
+    padding: 7px 30px;
+    /* Adjust this value based on the height of your popover content */
+    top: -60px;
+    left: -87px;
+    display: flex;
+    flex-direction: row;
+    background-color: hsl(214, 17%, 51%);
+    justify-content: space-around;
+    border-radius: 5px;
+    z-index: 1;
+    /* Initially make it transparent */
+    transition: top 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    opacity: 0;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    /* Add this line for the shadow */
+    /* Add a smooth transition */
+}
+
+.popover p {
+    color: hsl(212, 23%, 69%)
+}
+
+.popover::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    /* Change 'top' to 'bottom' */
+    right: 50%;
+    margin-right: -10px;
+    /* Half the width of the triangle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: hsl(214, 17%, 51%) transparent transparent transparent;
+    /* Flip the triangle */
+}
+
+
+.popover.active {
+    opacity: 1;
+}
+
+
+  
